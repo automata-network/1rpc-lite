@@ -1,0 +1,6 @@
+.vscode
+target/
+bin/sgx/target/
+config/
+domain.crt
+domain.key

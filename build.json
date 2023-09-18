@@ -1,0 +1,14 @@
+{
+	"language": "rust",
+	"input": {
+		"cmd": "SGX=1 BUILD=1 RELEASE=1 ./scripts/1rpc.sh",
+		"vendor": "SGX=1 FETCH=1 ./scripts/1rpc.sh"
+	},
+	"output": {
+        "sgx_signed_so": "bin/sgx/target/release/sgx_1rpc_enclave.signed.so",
+		"files": [
+			"bin/sgx/target/release/sgx-1rpc",
+			"bin/sgx/target/release/sgx_1rpc_enclave.signed.so"
+		]
+	}
+}

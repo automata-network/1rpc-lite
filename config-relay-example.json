@@ -1,0 +1,4 @@
+{
+    "eth": "https://eth.llamarpc.com",
+    "dot": "wss://rpc.polkadot.io"
+}
