@@ -1,0 +1,48 @@
+name: SGX OneRpc Build
+
+on:
+  push:
+    branches: [dev]
+
+env:
+  REGISTRY_NAME: ataacr
+
+jobs:
+  build:
+    runs-on: [self-hosted]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Login acr
+      uses: azure/docker-login@v1
+      with:
+        login-server: ${{ env.REGISTRY_NAME }}.azurecr.io
+        username: ${{ secrets.ATA_ACR_USERNAME }}
+        password: ${{ secrets.ATA_ACR_PASSWORD }}
+
+    - name: Build and push docker image
+      run: |
+        echo "======remove old certificates======"
+        rm -f ./src/apps/onerpc/src/domain.key
+        rm -f ./src/apps/onerpc/src/domain.crt
+        echo "======add new certificates======"
+        cp /data/certificates/demo.1rpc.io.crt ./src/apps/onerpc/src/domain.crt
+        cp /data/certificates/demo.1rpc.io.key ./src/apps/onerpc/src/domain.key
+        echo "======build docker image======"
+        docker buildx create --name geode-buildx-builder --buildkitd-flags '--oci-worker-gc-keepstorage 50000'
+        docker buildx inspect geode-buildx-builder
+        docker buildx use geode-buildx-builder
+        docker buildx build --push --cache-from type=local,src=/tmp/.buildx-cache-onerpc-demo \
+          --cache-to type=local,dest=/tmp/.buildx-cache-onerpc-demo-new,mode=max \
+          -f ./Dockerfile -t ${{ env.REGISTRY_NAME }}.azurecr.io/geode:onerpc-demo-${{ github.sha }} \
+          .
+        echo "======clean======"
+        docker image prune -f
+        docker buildx stop geode-buildx-builder
+        echo ${{ env.REGISTRY_NAME }}.azurecr.io/geode:onerpc-demo-${{ github.sha }}
+
+    - name: Update cache
+      run: |
+        rm -rf /tmp/.buildx-cache-onerpc-demo
+        mv /tmp/.buildx-cache-onerpc-demo-new /tmp/.buildx-cache-onerpc-demo
