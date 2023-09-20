@@ -3,7 +3,6 @@ members = [
     "bin/std/onerpc",
     "src/apps",
 
-    "src/common/sgxlib-ra",
     "src/common/forwarder",
 ]
 

@@ -31,6 +31,13 @@ impl apps::App for App {
             ws_keep_alive: Some(Duration::from_secs(10)),
             ws_max_body_length: Some(2 << 20),
         };
+        
+        #[cfg(feature = "dcap")]
+        {
+            let quote = sgxlib_ra::dcap_quote();
+            glog::info!("quote: {:?}", quote);
+        }
+        
         if self.arg.get().is_demo {
             let router = OneRpcRouter::from_static(&self.arg.get().routes);
             let ws_handler = DemoWsHandler::default();
