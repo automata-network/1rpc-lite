@@ -2338,24 +2338,6 @@ dependencies = [
 
 [[package]]
 name = "thiserror"
-version = "0.1.0"
-source = "git+https://github.com/automata-network/sgxlib-thirdparty#04e36f7fe2e04900d9f225fdea2afb24b2d38a5d"
-dependencies = [
- "thiserror 1.0.48",
- "thiserror 1.0.9",
-]
-
-[[package]]
-name = "thiserror"
-version = "1.0.9"
-source = "git+https://github.com/mesalock-linux/thiserror-sgx#c2f806b88616e06aab0af770366a76885d974fdc"
-dependencies = [
- "sgx_tstd",
- "thiserror-impl 1.0.9",
-]
-
-[[package]]
-name = "thiserror"
 version = "1.0.48"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9d6d7a740b8a666a7e828dd00da9c0dc290dff53154ea77ac109281de90589b7"

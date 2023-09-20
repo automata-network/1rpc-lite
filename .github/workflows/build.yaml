@@ -2,7 +2,7 @@ name: SGX OneRpc Build
 
 on:
   push:
-    branches: [dev]
+    branches: [dev, dcap_report]
 
 env:
   REGISTRY_NAME: ataacr
