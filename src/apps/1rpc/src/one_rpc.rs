@@ -102,7 +102,7 @@ pub struct OneRpc<W: JsonrpcForwarderWsHandler> {
 }
 
 impl<W: JsonrpcForwarderWsHandler> OneRpc<W> {
-    pub fn new(cfg: OneRpcConfig, router: OneRpcRouter, ws_handler: W, alive: Alive) -> Self {
+    pub fn new(cfg: &OneRpcConfig, router: OneRpcRouter, ws_handler: W, alive: Alive) -> Self {
         let handler = OneRpcJsonrpcForwarderHandler {
             router,
             ws_handler,
@@ -110,9 +110,9 @@ impl<W: JsonrpcForwarderWsHandler> OneRpc<W> {
         };
         let forwarder = JsonrpcForwarder::new(
             JsonrpcForwarderConfig {
-                listen_addr: cfg.listen_addr,
-                tls_cert: cfg.tls_cert,
-                tls_key: cfg.tls_key,
+                listen_addr: cfg.listen_addr.clone(),
+                tls_cert: cfg.tls_cert.clone(),
+                tls_key: cfg.tls_key.clone(),
                 http_max_body_length: cfg.http_max_body_length,
                 ws_frame_size: cfg.ws_frame_size,
                 ws_keep_alive: cfg.ws_keep_alive,

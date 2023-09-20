@@ -32,6 +32,7 @@ function execute() {
     if [[ "$BUILD" != "" ]]; then
         cargo build $build_arg
     else
+        set -x
         RUST_BACKTRACE=full cargo run $build_arg -- $@
     fi
 }

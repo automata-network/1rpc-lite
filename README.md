@@ -1,18 +1,21 @@
-# 1RPC Backend
+# 1RPC lite
+
+[![License](https://img.shields.io/badge/license-Apache2-green.svg)](LICENSE)
 
 ## How to run
 
-### 1. Initialize SGX Env
+### 1. TLS cert & key
 
-You can refer [here](./Dockerfile).
+if you are going to run demo with https, plz prepare `domain.key` and `domain.crt`
 
-### 2. TLS cert & key
+OR you just touch empty files at above locations for local test purpose
 
-if you are going to run demo with https, plz prepare `src/apps/onerpc/src/domain.key` and `src/apps/onerpc/src/domain.crt`, both will be compile into SGX enclave
+```
+> touch domain.key
+> touch domain.crt
+```
 
-OR you just `touch` empty files at above locations for local test purpose
-
-### 3. Config & Run
+### 2. Config & Run
 
 onerpc app can run in 2 modes:
 * **demo mode**: not relay websocket jsonrpc requests, but instead send protection details via websocket channel
@@ -32,7 +35,11 @@ edit config-demo-example.json
 }
 ```
 
-`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-demo-example.json`
+
+```
+> SGX=1 RELEASE=1 ./scripts/1rpc.sh -r config-demo-example.json --tls domain
+```
+(`--tls domain` is to lookup `domain.key` and `domain.crt`)
 
 Test out:
 
@@ -51,7 +58,9 @@ edit config-relay-example.json
 }
 ```
 
-`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-relay-example.json -d false`
+```
+> SGX=1 RELEASE=1 ./scripts/1rpc.sh -r config-relay-example.json -d false --tls domain
+```
 
 Test out:
 1. make http jsonrpc requests to `http://127.0.0.1:3400/eth/$token`

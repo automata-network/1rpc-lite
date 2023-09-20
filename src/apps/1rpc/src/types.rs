@@ -8,6 +8,7 @@ pub struct Args {
     pub addr: String,
     pub is_demo: bool,
     pub routes: String,
+    pub tls: String,
 }
 
 impl Default for Args {
@@ -16,7 +17,8 @@ impl Default for Args {
             executable: "".into(),
             addr: "0.0.0.0:3400".into(),
             is_demo: true,
-            routes: "".into(),
+            routes: "config.json".into(),
+            tls: "".into(),
         }
     }
 }
@@ -37,6 +39,9 @@ impl Args {
                 Opt::Short('r') => {
                     out.routes = opts.value().unwrap().parse().unwrap();
                 }
+                Opt::Short('t') | Opt::Long("tls") => {
+                    out.tls = opts.value().unwrap().parse().unwrap();
+                },
                 _ => continue,
             }
         }
