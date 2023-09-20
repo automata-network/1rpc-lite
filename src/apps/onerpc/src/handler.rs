@@ -70,7 +70,7 @@ impl JsonrpcForwarderWsHandler for DemoWsHandler {
                 let raw = serde_json::to_vec(&req.sr.tr).unwrap();
                 ws_responses.add_raw(*conn_id, raw);
             } else {
-                glog::warn!("ws_conn[token={}]: not exist", token);
+                glog::warn!("ws_conn[token={}]: nil", token);
             }
         }
     }
