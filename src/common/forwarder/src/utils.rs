@@ -49,7 +49,7 @@ fn get_header_from_http_req(
 pub fn get_host_ip(req: &mut net_http::HttpRequestReader) -> String {
     let na = String::from("N/A");
 
-    let host = match get_header_from_http_req(req, "host") {
+    let mut host = match get_header_from_http_req(req, "host") {
         Some(v) => v,
         _ => return na,
     };
@@ -58,6 +58,9 @@ pub fn get_host_ip(req: &mut net_http::HttpRequestReader) -> String {
         return "127.0.0.1".into();
     }
 
+    if !host.ends_with(":443") {
+        host.push_str(":443");
+    }
     glog::debug!("query host: {}", host);
     match host.to_socket_addrs() {
         Ok(v) => match v.into_iter().next() {
