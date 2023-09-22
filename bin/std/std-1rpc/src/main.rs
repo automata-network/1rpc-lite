@@ -1,4 +1,4 @@
-use app_onerpc::App;
+use app_1rpc::App;
 use std::sync::Arc;
 
 fn main() {

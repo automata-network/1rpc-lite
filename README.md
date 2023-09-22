@@ -25,14 +25,14 @@ onerpc app can run in 2 modes:
 
 #### Run in demo mode
 
-edit config-demo.json
+edit config-demo-example.json
 ```json
 {
     "eth": "https://eth.llamarpc.com" // <- replace with your prefered endpoint
 }
 ```
 
-`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-demo.json`
+`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-demo-example.json`
 
 Test out:
 
@@ -43,7 +43,7 @@ Test out:
 
 #### Run in relay mode
 
-edit config-relay.json
+edit config-relay-example.json
 ```json
 {
     "eth": "https://eth.llamarpc.com", // <- replace with your prefered endpoint
@@ -51,7 +51,7 @@ edit config-relay.json
 }
 ```
 
-`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-relay.json -d false`
+`SGX=1 RELEASE=1 RUST_LOG=debug bash ./scripts/onerpc.sh -r config-relay-example.json -d false`
 
 Test out:
 1. make http jsonrpc requests to `http://127.0.0.1:3400/eth/$token`

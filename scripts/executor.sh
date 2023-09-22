@@ -13,6 +13,8 @@ function execute() {
         if [[ "$INC" == "" ]]; then
             rm -rf bin/sgx/target/*/build/$PKG-*
         fi
+    else
+        PKG="std-$PKG"
     fi
     dir="bin/$TARGET_ENV/$PKG"
 
@@ -30,6 +32,7 @@ function execute() {
     if [[ "$BUILD" != "" ]]; then
         cargo build $build_arg
     else
+        set -x
         RUST_BACKTRACE=full cargo run $build_arg -- $@
     fi
 }

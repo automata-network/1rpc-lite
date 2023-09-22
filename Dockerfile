@@ -98,4 +98,4 @@ EXPOSE 3400
 ENV SGX=1
 ENV RELEASE=1
 ENV RUST_LOG=debug
-ENTRYPOINT ["bash", "./scripts/onerpc.sh", "-r", "config-demo.json"]
+ENTRYPOINT ["bash", "./scripts/1rpc.sh", "-r", "config-demo-example.json"]

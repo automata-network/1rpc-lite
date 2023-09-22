@@ -1,7 +1,7 @@
 [workspace]
 members = [
-    "sgx-onerpc",
-    "sgx-onerpc/enclave",
+    "sgx-1rpc",
+    "sgx-1rpc/enclave",
 ]
 
 [patch.'https://github.com/apache/teaclave-sgx-sdk.git']
@@ -10,7 +10,6 @@ sgx_backtrace_sys = { git = "https://github.com/automata-network/incubator-teacl
 sgx_build_helper = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
 sgx_demangle = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
 sgx_libc = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
-# sgx_rand = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
 sgx_tcrypto = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
 sgx_ucrypto = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }
 sgx_tkey_exchange = { git = "https://github.com/automata-network/incubator-teaclave-sgx-sdk", tag = "v1.1.4" }

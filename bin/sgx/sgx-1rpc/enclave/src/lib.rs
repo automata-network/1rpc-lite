@@ -8,7 +8,7 @@
 #[macro_use]
 extern crate sgxlib as std;
 
-use app_onerpc::App;
+use app_1rpc::App;
 use std::ffi::CStr;
 use std::os::raw::c_char;
 use std::prelude::v1::*;

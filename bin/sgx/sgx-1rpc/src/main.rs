@@ -11,7 +11,7 @@ use std::ffi::CString;
 fn main() {
     glog::init();
 
-    let enclave = Enclave::new("sgx_onerpc_enclave");
+    let enclave = Enclave::new("sgx_1rpc_enclave");
 
     let args: Vec<String> = std::env::args().collect();
     let args = serde_json::to_string(&args).unwrap();

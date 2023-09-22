@@ -24,11 +24,11 @@ jobs:
     - name: Build and push docker image
       run: |
         echo "======remove old certificates======"
-        rm -f ./src/apps/onerpc/src/domain.key
-        rm -f ./src/apps/onerpc/src/domain.crt
+        rm -f ./src/apps/1rpc/src/domain.key
+        rm -f ./src/apps/1rpc/src/domain.crt
         echo "======add new certificates======"
-        cp /data/certificates/demo.1rpc.io.crt ./src/apps/onerpc/src/domain.crt
-        cp /data/certificates/demo.1rpc.io.key ./src/apps/onerpc/src/domain.key
+        cp /data/certificates/demo.1rpc.io.crt ./src/apps/1rpc/src/domain.crt
+        cp /data/certificates/demo.1rpc.io.key ./src/apps/1rpc/src/domain.key
         echo "======build docker image======"
         docker buildx create --name geode-buildx-builder --buildkitd-flags '--oci-worker-gc-keepstorage 50000'
         docker buildx inspect geode-buildx-builder

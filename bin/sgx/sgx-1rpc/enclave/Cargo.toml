@@ -1,5 +1,5 @@
 [package]
-name = "sgx-onerpc-enclave"
+name = "sgx-1rpc-enclave"
 version = "0.1.0"
 authors = [ "Automata Authors" ]
 edition = "2018"
@@ -15,7 +15,7 @@ default = []
 [dependencies]
 sgxlib = { git = "https://github.com/automata-network/sgxlib", default-features = false, features = ["tstd", "types", "trts"] }
 apps = { path = "../../../../src/apps", default-features = false, features = ["tstd"] }
-app-onerpc = { path = "../../../../src/apps/onerpc", default-features = false, features = ["tstd", "sgx", "dcap"] }
+app-1rpc = { path = "../../../../src/apps/1rpc", default-features = false, features = ["tstd", "sgx", "dcap"] }
 
 glog = { git = "https://github.com/automata-network/glog-rs", default-features = false, features = ["tstd"] }
 
@@ -25,7 +25,7 @@ serde_json = { git = "https://github.com/automata-network/sgxlib-thirdparty", de
 lazy_static = { version = "1.4.0", default-features = false, features = ["spin_no_std"] }
 
 [lib]
-name = "sgx_onerpc_enclave"
+name = "sgx_1rpc_enclave"
 crate-type = [ "staticlib" ]
 
 [build-dependencies]

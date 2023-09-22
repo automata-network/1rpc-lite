@@ -1,5 +1,5 @@
 [package]
-name = "app-onerpc"
+name = "app-1rpc"
 version = "0.1.0"
 authors = [ "Automata Authors" ]
 edition = "2021"
