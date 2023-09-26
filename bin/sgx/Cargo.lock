@@ -112,7 +112,7 @@ dependencies = [
 [[package]]
 name = "ata-sgx-builder"
 version = "0.1.0"
-source = "git+https://github.com/automata-network/sgxlib#1d0d27ec6444ed13884e9cdd4db7e0d1387fb2ad"
+source = "git+https://github.com/automata-network/sgxlib#e68957817bc285c19cb13c2c2d25b42a062446c9"
 dependencies = [
  "cargo_toml",
  "cc",
@@ -412,7 +412,7 @@ checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
 [[package]]
 name = "crypto"
 version = "0.1.0"
-source = "git+https://github.com/automata-network/crypto-rs#b92fde2f69d7499cf62af62ae564f92f2396107c"
+source = "git+https://github.com/automata-network/crypto-rs#696e0ef541e21d01d4514562e70570f448bdfb25"
 dependencies = [
  "aes-gcm",
  "blst",
@@ -2115,7 +2115,7 @@ dependencies = [
 [[package]]
 name = "sgxlib"
 version = "0.1.0"
-source = "git+https://github.com/automata-network/sgxlib#1d0d27ec6444ed13884e9cdd4db7e0d1387fb2ad"
+source = "git+https://github.com/automata-network/sgxlib#e68957817bc285c19cb13c2c2d25b42a062446c9"
 dependencies = [
  "sgx_libc",
  "sgx_tcrypto",
@@ -2130,7 +2130,7 @@ dependencies = [
 [[package]]
 name = "sgxlib-enclave"
 version = "0.1.0"
-source = "git+https://github.com/automata-network/sgxlib#1d0d27ec6444ed13884e9cdd4db7e0d1387fb2ad"
+source = "git+https://github.com/automata-network/sgxlib#e68957817bc285c19cb13c2c2d25b42a062446c9"
 dependencies = [
  "sgxlib",
 ]
