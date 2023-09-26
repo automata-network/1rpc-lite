@@ -1,4 +1,4 @@
-# OneRpc Backend
+# 1RPC Backend
 
 ## How to run
 
