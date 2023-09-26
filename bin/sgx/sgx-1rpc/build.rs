@@ -15,6 +15,14 @@
 // specific language governing permissions and limitations
 // under the License..
 
+use std::env;
+use std::path::Path;
+
 fn main() {
-    ata_sgx_builder::GeodeBuild::new().build(ata_sgx_builder::LinkType::Dcap);
+    let builder = ata_sgx_builder::GeodeBuild::new();
+    builder.build_signing_material();
+
+    let signatures = builder.build_sign_with_pem();
+    let pubkey_path = Path::new(&env::var("OUT_DIR").unwrap().to_string()).join("public.pem");
+    builder.build_signed_material(&pubkey_path, &signatures, ata_sgx_builder::LinkType::Dcap);
 }
