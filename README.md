@@ -37,9 +37,14 @@ edit config-demo-example.json
 
 
 ```
-> SGX=1 RELEASE=1 ./scripts/1rpc.sh -r config-demo-example.json --tls domain
+> RELEASE=1 ./scripts/1rpc.sh -r config-demo-example.json --tls domain
 ```
+
 (`--tls domain` is to lookup `domain.key` and `domain.crt`)
+
+you can add env `SGX=1` to build&run the SGX version, before that you need to setup SGX
+environment, You can find the [installation guides](https://download.01.org/intel-sgx/sgx-linux/2.9/docs/)
+for Intel SGX software on the 01.org website
 
 Test out:
 
@@ -59,7 +64,7 @@ edit config-relay-example.json
 ```
 
 ```
-> SGX=1 RELEASE=1 ./scripts/1rpc.sh -r config-relay-example.json -d false --tls domain
+> RELEASE=1 ./scripts/1rpc.sh -r config-relay-example.json -d false --tls domain
 ```
 
 Test out:
