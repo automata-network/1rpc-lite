@@ -44,7 +44,7 @@ edit config-demo-example.json
 
 you can add env `SGX=1` to build&run the SGX version, before that you need to setup SGX
 environment, You can find the [installation guides](https://download.01.org/intel-sgx/sgx-linux/2.9/docs/)
-for Intel SGX software on the 01.org website
+for Intel SGX software on the 01.org website. Besides, you need to prepare an account as well, to submit the dcap attestation in [Automata Testnet](https://docs.ata.network/protocol/testnet).
 
 Test out:
 

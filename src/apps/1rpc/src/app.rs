@@ -25,7 +25,23 @@ impl apps::App for App {
 
         #[cfg(feature = "dcap")]
         {
-            let quote = sgxlib_ra::dcap_quote();
+            use crypto::Secp256k1PrivateKey;
+            use jsonrpc::MixRpcClient;
+            use sgxlib_ra::ExecutionClient;
+
+            let mut mix = MixRpcClient::new(None);
+            mix.add_endpoint(&Alive::new(), &["https://1rpc.io/ata/testnet".to_string()]).unwrap();
+            let el = ExecutionClient::new(mix);
+
+            if self.arg.get().check_default_private_key() {
+                let err_msg = "Unable to find submitter account".to_string();
+                glog::error!("{}", err_msg);
+                return Err(err_msg);
+            }
+            let submitter_prvkey = &self.arg.get().submitter[..];
+            let submitter: Secp256k1PrivateKey = submitter_prvkey.into();
+
+            let quote = sgxlib_ra::dcap_quote(&el, &submitter);
             glog::info!("quote: {:?}", quote);
         }
 
