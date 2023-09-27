@@ -24,8 +24,8 @@ OR you just touch empty files at above locations for local test purpose
 ### 2. Config & Run
 
 1RPC lite app can run in 2 modes:
+* **relay mode**: relay jsonrpc requests, no protection details conveyed
 * **demo mode**: not relay websocket jsonrpc requests, but instead send protection details via websocket channel
-* **relay mode**: relay websocket jsonrpc requests, no protection details conveyed
 
 1. both modes load routes from static json config file (example in following section)
 2. make sure no duplicate keys in routes
