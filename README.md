@@ -6,15 +6,15 @@
 
 This project is a minimized [1RPC](https://docs.1rpc.io) application which relays JSON-RPC requests.
 
-In addition to normal relays, it sanitizes your JSON-RPC by masking out the metadata (like IP address, User-Agent) carried with HTTP requests, and breaks down special eth_calls which may leak your wallets relationship to ensure zero-tracking.
+In addition to normal relays, it sanitizes your JSON-RPC by masking out the metadata (like IP address, User-Agent) carried with HTTP requests, and breaks down special `eth_call`s which may leak your wallets relationship to ensure zero-tracking.
 
 ## How to run
 
 ### 1. TLS cert & key
 
-if you are going to run demo with https, plz prepare `domain.key` and `domain.crt`
+If you are going to run demo with https, plz prepare `domain.key` and `domain.crt`.
 
-OR you just touch empty files at above locations for local test purpose
+OR you just touch empty files at above locations for local test purpose.
 
 ```
 > touch domain.key
@@ -47,8 +47,8 @@ edit config-relay-example.json
 
 (`--tls domain` is to lookup `domain.key` and `domain.crt`)
 
-you can add env `SGX=1` to build&run the SGX version, before that you need to setup SGX
-environment, You can find the [installation guides](https://download.01.org/intel-sgx/sgx-linux/2.9/docs/)
+You can add env `SGX=1` to build&run the SGX version, before that you need to setup SGX
+environment. You can find the [installation guides](https://download.01.org/intel-sgx/sgx-linux/2.9/docs/)
 for Intel SGX software on the 01.org website. Besides, you need to prepare an account as well, to submit the dcap attestation in [Automata Testnet](https://docs.ata.network/protocol/testnet).
 
 Test out:
