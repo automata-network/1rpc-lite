@@ -9,6 +9,7 @@ pub struct Args {
     pub is_demo: bool,
     pub routes: String,
     pub tls: String,
+    pub submitter: String,
 }
 
 impl Default for Args {
@@ -19,6 +20,7 @@ impl Default for Args {
             is_demo: true,
             routes: "config.json".into(),
             tls: "".into(),
+            submitter: "0x0000000000000000000000000000000000000000000000000000000000000000".into(),
         }
     }
 }
@@ -42,9 +44,16 @@ impl Args {
                 Opt::Short('t') | Opt::Long("tls") => {
                     out.tls = opts.value().unwrap().parse().unwrap();
                 },
+                Opt::Short('s') | Opt::Long("submitter") => {
+                    out.submitter = opts.value().unwrap().parse().unwrap();
+                }
                 _ => continue,
             }
         }
         out
+    }
+
+    pub fn check_default_private_key(&self) -> bool {
+        self.submitter == "0x0000000000000000000000000000000000000000000000000000000000000000".to_string()
     }
 }

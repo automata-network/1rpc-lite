@@ -22,5 +22,6 @@ serde = { git = "https://github.com/automata-network/sgxlib-thirdparty", default
 serde_json = { git = "https://github.com/automata-network/sgxlib-thirdparty", default-features = false }
 jsonrpc = { git = "https://github.com/automata-network/jsonrpc-rs", default-features = false }
 sgxlib-ra = { git = "https://github.com/automata-network/sgxlib-ra", default-features = false, optional = true, features = ["dcap"] }
+crypto = { git = "https://github.com/automata-network/crypto-rs", default-features = false }
 
 forwarder = { path = "../../common/forwarder", default-features = false }
