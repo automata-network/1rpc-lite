@@ -20,7 +20,7 @@ You can view the latest attestation report at its [release page](https://github.
 
 Currently 1RPC-lite is hosted in Azure Cloud and uses [Intel DCAP](https://github.com/intel/SGXDataCenterAttestationPrimitives) to complete the TEE attestation, ensuring that the hardware execution environment and the running code are matched as expected.
 
-In Automata Testnet, we implement an [on-chain DCAP quote verification](https://explorer.ata.network/address/0xF470A9ac6e5DcCbfBC45656459fFA2A3F10b471c), and you can find the [current attestation](https://explorer.ata.network/tx/0xfb34c31d30b2275fffc728d8897fa0173b05289b511d30891bc708d6d62d6920) it Automata Testnet.
+In Automata Testnet, we implement an [on-chain DCAP quote verification](https://explorer.ata.network/address/0xF470A9ac6e5DcCbfBC45656459fFA2A3F10b471c), and you can find the [current attestation](https://explorer.ata.network/tx/0xd703f17ad48f6538750ba1f8f495db064de9460e3969444904d820da7e41192f) it Automata Testnet.
 
 ## How to run
 
