@@ -1,0 +1,24 @@
+name: Software Build Attestation
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    permissions: write-all
+    runs-on: [reproducible-build-0]
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Build
+      run: |
+        attestable-build-tool build -output 1rpc-lite -nitro ~/ata-build-rust-dcap-latest.eif -vendor ata-build-rust
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+        body_path: 1rpc-lite.txt
+        append_body: true
+        files: |
+          1rpc-lite.report
+          1rpc-lite.tar

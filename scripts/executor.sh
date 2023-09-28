@@ -18,21 +18,23 @@ function execute() {
     fi
     dir="bin/$TARGET_ENV/$PKG"
 
-    build_arg=""
+    profile=""
     if [[ "$RELEASE" != "" ]]; then
-        build_arg=" --release "
+        profile=" --release "
     fi
 
     if [[ "$RUST_LOG" == "" ]]; then
         RUST_LOG="info"
     fi
 
-    build_arg=" --manifest-path=$dir/Cargo.toml $build_arg"
+    build_arg=" --manifest-path=$dir/Cargo.toml"
 
     if [[ "$BUILD" != "" ]]; then
-        cargo build $build_arg
+        cargo build $build_arg $profile
+    elif [[ "$FETCH" != "" ]]; then
+        cargo fetch $build_arg
     else
         set -x
-        RUST_BACKTRACE=full cargo run $build_arg -- $@
+        RUST_BACKTRACE=full cargo run $profile $build_arg -- $@
     fi
 }
