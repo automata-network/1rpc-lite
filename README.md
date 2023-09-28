@@ -14,7 +14,7 @@ In addition to normal relays, it sanitizes your JSON-RPC by masking out the meta
 
 Leveraging the [attestable-build-tool](https://github.com/automata-network/attestable-build-tool), we achieve a reproducible build and result in the same MREnclave. If you're interested in the whole compilation process, you can download the source code and trigger an attestable build by yourself.
 
-You can view the latest attestation report at its [release page](https://github.com/automata-network/1rpc-lite/releases/tag/v1.0).
+You can view the latest attestation report at its [release page](https://github.com/automata-network/1rpc-lite/releases).
 
 ### Attestation on Hardware
 
