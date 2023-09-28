@@ -12,7 +12,7 @@ In addition to normal relays, it sanitizes your JSON-RPC by masking out the meta
 
 ### Attestation on Software Build
 
-Leveraging the [attestable-build-tool](https://github.com/automata-network/attestable-build-tool), we achieve a reproducible build and result in the same MREnclave, if you're interested in the whole compilation process, you can download the source code and trigger an attestable build by yourself.
+Leveraging the [attestable-build-tool](https://github.com/automata-network/attestable-build-tool), we achieve a reproducible build and result in the same MREnclave. If you're interested in the whole compilation process, you can download the source code and trigger an attestable build by yourself.
 
 You can view the latest attestation report at its [release page](https://github.com/automata-network/1rpc-lite/releases/tag/v1.0).
 
@@ -20,7 +20,7 @@ You can view the latest attestation report at its [release page](https://github.
 
 Currently 1RPC-lite is hosted in Azure Cloud and uses [Intel DCAP](https://github.com/intel/SGXDataCenterAttestationPrimitives) to complete the TEE attestation, ensuring that the hardware execution environment and the running code are matched as expected.
 
-On Automata Testnet, we implement an [on-chain DCAP quote verification](https://explorer.ata.network/address/0xF470A9ac6e5DcCbfBC45656459fFA2A3F10b471c), and you can find the [current attestation](https://explorer.ata.network/tx/0xfb34c31d30b2275fffc728d8897fa0173b05289b511d30891bc708d6d62d6920) at Automata Testnet. 
+In Automata Testnet, we implement an [on-chain DCAP quote verification](https://explorer.ata.network/address/0xF470A9ac6e5DcCbfBC45656459fFA2A3F10b471c), and you can find the [current attestation](https://explorer.ata.network/tx/0xfb34c31d30b2275fffc728d8897fa0173b05289b511d30891bc708d6d62d6920) it Automata Testnet.
 
 ## How to run
 
