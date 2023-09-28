@@ -8,6 +8,20 @@ This project is a minimized [1RPC](https://docs.1rpc.io) application which relay
 
 In addition to normal relays, it sanitizes your JSON-RPC by masking out the metadata (like IP address, User-Agent) carried with HTTP requests, and breaks down special `eth_call`s which may leak your wallets relationship to ensure zero-tracking.
 
+## Full attestation
+
+### Attestation on Software Build
+
+Leveraging the [attestable-build-tool](https://github.com/automata-network/attestable-build-tool), we achieve a reproducible build and result in the same MREnclave, if you're interested in the whole compilation process, you can download the source code and trigger an attestable build by yourself.
+
+Current MREnclave: 0xf9b9e6c472bf814b0b597267061f4d22ecfd12f7cf78950015fea7e8a89da6ea
+
+### Attestation on Hardware
+
+Currently 1RPC-lite is hosted in Azure Cloud and uses [Intel DCAP](https://github.com/intel/SGXDataCenterAttestationPrimitives) to complete the TEE attestation, ensuring that the hardware execution environment and the running code are matched as expected.
+
+On Automata Testnet, we implement an [on-chain DCAP quote verification](https://explorer.ata.network/address/0xF470A9ac6e5DcCbfBC45656459fFA2A3F10b471c), and you can find the [current attestation](https://explorer.ata.network/tx/0xfb34c31d30b2275fffc728d8897fa0173b05289b511d30891bc708d6d62d6920) at Automata Testnet. 
+
 ## How to run
 
 ### 1. TLS cert & key
