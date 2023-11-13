@@ -50,7 +50,7 @@ OR you just touch empty files at above locations for local test purpose.
 edit config-relay-example.json
 ```json
 {
-    "eth": "https://eth.llamarpc.com", // <- replace with your prefered endpoint
+    "eth": "http://127.0.0.1:8545", // <- replace with your prefered endpoint
     "dot": "wss://rpc.polkadot.io", // etc
 }
 ```
@@ -74,7 +74,7 @@ Test out:
 edit config-demo-example.json
 ```json
 {
-    "eth": "https://eth.llamarpc.com" // <- replace with your prefered endpoint
+    "eth": "http://127.0.0.1:8545" // <- replace with your prefered endpoint
 }
 ```
 

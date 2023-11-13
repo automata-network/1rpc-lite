@@ -1,4 +1,4 @@
 {
-    "eth": "https://eth.llamarpc.com",
+    "eth": "http://127.0.0.1:8545",
     "dot": "wss://rpc.polkadot.io"
 }
