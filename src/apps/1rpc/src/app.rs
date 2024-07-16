@@ -30,7 +30,7 @@ impl apps::App for App {
             use sgxlib_ra::ExecutionClient;
 
             let mut mix = MixRpcClient::new(None);
-            mix.add_endpoint(&Alive::new(), &["https://1rpc.io/ata/testnet".to_string()]).unwrap();
+            mix.add_endpoint(&Alive::new(), &["https://automata-testnet.alt.technology".to_string()]).unwrap();
             let el = ExecutionClient::new(mix);
 
             if self.arg.get().check_default_private_key() {

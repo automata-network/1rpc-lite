@@ -139,6 +139,7 @@ impl<H: JsonrpcForwarderHandler> JsonrpcForwarder<H> {
                 tls_key: cfg.tls_key.clone(),
                 frame_size: cfg.ws_frame_size.clone(),
                 http_max_body_length: cfg.http_max_body_length.clone(),
+                max_idle_secs: None,
             };
 
             let srv_handler = ServerHandler {
